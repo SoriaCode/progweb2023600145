@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+
+        let suma=0;
+        let n=400;
+
+        for(i=2; i<=n;i++){
+            if(i  % 2 === 0){
+                document.write(i+", ");
+                suma = i + suma;
+            }
+        }
+
+        let promedio=suma/(n/2);
+        let mediana=(n/2+(n/2)+2)/2;
+
+        document.write("<br>El promedio es: "+promedio);
+        document.write("<br>La moda es: 2");
+        document.write("<br>La mediana es: "+mediana);
+
+
+    </script>
+</body>
