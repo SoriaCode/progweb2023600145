@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function arreglo(){
+                let arr = ["hola",2,true,"mundo",15,false,true,"cruel",100];
+                let cadena = "";
+                let numero = 0;
+                let booleano = true;
+
+                for(let i=0; i<arr.length; i++){
+                    if (typeof arr[i] === 'string'){
+                        cadena = cadena + " " + arr[i];
+                    }else if (typeof arr[i] === 'number'){
+                        numero = numero + arr[i];
+                    }else{
+                        booleano = booleano && arr[i];
+                    }
+                }
+                document.write("Cadena concatenada: "+cadena+"<br>");
+                document.write("Numeros sumados: "+numero+"<br>");
+                document.write("Resultado AND booleanos: "+booleano+"<br>");
+            }
+        </script>
+    </head>
+    <body onload="arreglo()">
+        
+    </body>
+</html>
