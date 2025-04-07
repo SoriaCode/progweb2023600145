@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 50px; 
+            height: 50px;
+            text-align: center;
+        }
+        #w,#a,#s,#d,#z,#x{
+            background-color: grey; 
+        }
+
+    </style>
+    <script>
+        function agregarListeners() {
+            document.addEventListener("keydown", teclado);
+            document.addEventListener("keyup", teclado);
+        }
+        
+        function teclado(event) {  
+            let tecla = event.key.toLowerCase();
+            let divColor = document.getElementById(tecla);
+
+            if (event.type === "keydown") {
+
+                switch(tecla){
+                    case "w":
+                    case "a":
+                    case "s":
+                    case "d":
+                    case "z":
+                    case "x":
+                        divColor.style.backgroundColor = "red";
+                        break
+                }
+
+            } else if (event.type === "keyup") {
+
+                    divColor.style.backgroundColor = "grey";
+
+            }
+        }
+    </script>
+</head>
+<body onload="agregarListeners()">
+    <table>
+        <tr>
+            <td><div></div></td>
+            <td><div id="w"><a>W</a></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div id="a"><a>A</a></div></td>
+            <td><div id="s"><a>S</a></div></td>
+            <td><div id="d"><a>D</a></div></td>
+            <td><div></div></td>
+            <td><div id="z"><a>Z</a></div></td>
+            <td><div></div></td>
+            <td><div id="x"><a>X</a></div></td>
+        </tr>
+    </table>
+</body>
+</html>
