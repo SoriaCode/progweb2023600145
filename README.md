@@ -43,3 +43,28 @@ La versión más reciente de este paquete está disponible en:
 - **Soria Cruz Salvador Giovanni** (ssoriac2200@alumno.ipn.mx)
 - **Lozano Clemente Susana** (slozanoc2200@alumno.ipn.mx)
 - **Cruz Martínez Aleitia Yari** (acruzm2212@alumno.ipn.mx)
+
+## Diagrama
+```mermaid
+erDiagram
+    Usuario {
+        int Pk_usuario_id
+        string usuario_nombre
+        string usuario_clave
+        string tipo_usuario
+    }
+    Ventas {
+        int Pk_id_venta
+        int Fk_id_empleado
+        date fecha_venta
+        float totalventa
+    }
+    Panes {
+        int Pk_id_pan
+        string nombre
+        float precio_unitario
+        string descripcion
+    }
+
+    Usuario ||--o{ Ventas : "realiza"
+    Ventas }o--|| Panes : "incluye"
